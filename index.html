@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Gia Farm  - Nguyên Chất 100% Từ Trang Trại</title>
+    <style>
+        :root {
+            --primary-color: #1e5631; /* Xanh lá trang trại */
+            --accent-color: #8b0000;  /* Đỏ rượu sang trọng */
+            --gold-color: #d4af37;    /* Vàng kim */
+            --bg-light: #f9f9f9;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--gold-color);
+            text-transform: uppercase;
+        }
+
+        .header-contact a {
+            color: white;
+            text-decoration: none;
+            background-color: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: var(--gold-color);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #a10000;
+        }
+
+        /* Cam kết Section */
+        .commitments {
+            padding: 50px 0;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .commit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .commit-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .commit-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        /* Product Section */
+        .products {
+            padding: 50px 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            text-align: center;
+            background: white;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Order Form Section */
+        .order-section {
+            background-color: var(--bg-light);
+            padding: 50px 0;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Floating Contact Buttons */
+        .floating-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-size: 12px;
+        }
+
+        .btn-call { background-color: #28a745; }
+        .btn-zalo { background-color: #0088fe; }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 26px; }
+            .hero p { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Hoàng Gia Farm</div>
+            <div class="header-contact">
+                <a href="tel:0964910873">📞 Hotline: 0981199282</a>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1>NHUNG HƯƠU NGUYÊN CHẤT 100%</h1>
+            <p>Cắt trực tiếp tại trang trại gia đình - Đảm bảo tươi ngon, giàu dinh dưỡng, giao hàng bảo quản lạnh tận nơi trên toàn quốc.</p>
+            <a href="#dat-hang" class="btn-main">ĐẶT HÀNG / TƯ VẤN NGAY</a>
+        </div>
+    </section>
+
+    <!-- Cam kết -->
+    <section class="commitments">
+        <div class="container">
+            <h2 class="section-title">Tại Sao Chọn Chúng Tôi?</h2>
+            <div class="commit-grid">
+                <div class="commit-card">
+                    <h3>Chăn Nuôi Tự Nhiên</h3>
+                    <p>Hươu được nuôi bằng cỏ tươi, củ quả sạch, đảm bảo chất lượng nhung tốt nhất.</p>
+                </div>
+                <div class="commit-card">
+                    <h3>Cắt Trực Tiếp</h3>
+                    <p>Thu hoạch chuẩn ngày tuổi, hỗ trợ khách xem trực tiếp hoặc quay video cắt nhung.</p>
+                </div>
+                <div class="commit-card">
+                    <h3>Nguyên Chất 100%</h3>
+                    <p>Cam kết hoàn tiền gấp 10 lần nếu phát hiện nhung giả hoặc kém chất lượng.</p>
+                </div>
+                <div class="commit-card">
+                    <h3>Giao Hàng Toàn Quốc</h3>
+                    <p>Hút chân không, cấp đông đúng tiêu chuẩn, đảm bảo tươi nguyên khi tới tay khách.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Danh mục sản phẩm -->
+    <section class="products">
+  <div class="container">
+            <h2 class="section-title" style="text-align: center;">Sản Phẩm Nổi Bật</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">Hình Ảnh Nhung Tươi</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Nhung Hươu Tươi Nguyên Cặp</h3>
+                        <div class="product-price">Liên hệ báo giá / Lạng</div>
+                        <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Cắt trực tiếp theo cân nặng. Hỗ trợ thái lát, sơ chế miễn phí.</p>
+                        <a href="#dat-hang" class="btn-buy">Đặt Mua Ngay</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">Hình Ảnh Nhung Ngâm Mật Ong</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Nhung Hươu Ngâm Mật Ong</h3>
+                        <div class="product-price">Giá: 1.xxx.000đ / Hũ</div>
+                        <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Thái lát tươi ngâm cùng mật ong rừng nguyên chất. Dễ dùng, bổ dưỡng.</p>
+                        <a href="#dat-hang" class="btn-buy">Đặt Mua Ngay</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">Hình Ảnh Nhung Khô</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Nhung Hươu Sấy Khô Thái Lát</h3>
+                        <div class="product-price">Giá: 2.xxx.000đ / Hộp</div>
+                        <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Sấy lạnh công nghệ hiện đại, giữ nguyên hàm lượng dưỡng chất.</p>
+                        <a href="#dat-hang" class="btn-buy">Đặt Mua Ngay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="order-section" id="dat-hang">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Đăng Ký Tư Vấn / Đặt Hàng</h2>
+            <div class="order-form">
+                <form action="#" method="POST" onsubmit="alert('Cảm ơn bạn! Chúng tôi sẽ gọi lại ngay.'); return false;">
+                    <div class="form-group">
+                        <label>Họ và Tên:</label>
+                        <input type="text" placeholder="Nhập tên của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Số Điện Thoại (Zalo):</label>
+                        <input type="tel" placeholder="Nhập số điện thoại" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sản phẩm quan tâm:</label>
+                        <select>
+                            <option>Nhung hươu tươi nguyên cặp</option>
+                            <option>Nhung hươu ngâm mật ong</option>
+                            <option>Nhung hươu sấy khô</option>
+                            <option>Tư vấn khác...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ghi chú (địa chỉ, số lượng...):</label>
+                        <textarea rows="3" placeholder="Nhập yêu cầu thêm của bạn"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">GỬI YÊU CẦU NGAY</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="floating-contact">
+        <a href="https://zalo.me/0964910873" target="_blank" class="float-btn btn-zalo">Zalo</a>
+        <a href="tel:0964910873" class="float-btn btn-call">Gọi</a>
+    </div>
+    <footer>
+        <div class="container">
+            <p><strong>Trang Trại Hươu Sao Hoàng Gia Farm</strong></p>
+            <p>Địa chỉ: xã Quang Tiến-Bắc Ninh </p>
+            <p>Hotline/Zalo: 098.119.9282</p>
+            <p style="margin-top: 10px; color: #777;">© 2026 Bản quyền thuộc về Hoàng Gia Farm.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
